@@ -29,7 +29,7 @@ pyasn1-modules==0.2.7
 pycosat==0.6.3
 pycparser==2.18
 pyknp==0.4.1
-pyOpenSSL==17.2.0
+pyOpenSSL==17.5.0
 PySocks==1.6.7
 python-dateutil==2.8.0
 PyYAML==5.1.2
