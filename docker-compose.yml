@@ -9,3 +9,11 @@ services:
     stdin_open: true
     working_dir: /usr/src/app
     command: npm run serve
+  transformer:
+    build: ./docker_transformer
+    volumes:
+      - ./jp_transformer:/work
+      - ./attention_weight/:/attention_weight
+      - ./bert_input_ids/:/bert_input_ids
+    working_dir: /work
+    tty: true
