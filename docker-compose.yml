@@ -17,3 +17,12 @@ services:
       - ./bert_input_ids/:/bert_input_ids
     working_dir: /work
     tty: true
+  calc_attention:
+    build: ./docker_calc_attention
+    volumes:
+      - ./calc_attention:/work
+      - ./attention_weight/:/attention_weight:ro
+      - ./bert_input_ids/:/bert_input_ids:ro
+      - ./visualize/src/assets:/features
+    working_dir: /work
+    tty: true
