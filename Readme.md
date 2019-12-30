@@ -24,6 +24,21 @@ docker-compose exec transformer bash
 [-e] 評価
 [-d data_dir] 利用するデータ 
 ```
+
+- calc_attention
+
+仮想環境
+```
+docker-compose up calc_attention
+docker-compose exec calc_attention bash
+```
+
+実行
+```
+python id2wd.py
+python mean_attention_weight.py
+```
+
 - visualize
 ```
 docker-compose up app
