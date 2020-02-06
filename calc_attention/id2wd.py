@@ -41,7 +41,7 @@ if __name__ == '__main__':
                         help='vocab file')
     parser.add_argument('-s',
                         '--save_file',
-                        default='../features/features.json',
+                        default='../bert_input_ids/features.json',
                         help='保存先')
     args = parser.parse_args()
     main(args)

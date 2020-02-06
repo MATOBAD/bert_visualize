@@ -25,22 +25,28 @@ def main(args):
     features_path = args.attention_dir
     feature_list = os.listdir(features_path)
     que_json = []
-    with open(args.save_json) as f:
+    que_json_idx = 0
+    with open(args.input_ids) as f:
         que_json = json.load(f)
 
-    que_json_idx = 0
+    attention_list = []
     for path in feature_list:
         # (layer, batch, heads, sequence_length, sequence_length)
         atten_features = np.load(os.path.join(features_path, path))
 
         attention_weight = calc_attention_weight(atten_features)
-
         for weight in attention_weight:
-            que_json[que_json_idx]["attention_weight"] = list(np.float64(weight))
+            dic = [
+                {
+                    'sentence': que_json[que_json_idx]['sentence'],
+                    'attention_weight': list(np.float64(weight))
+                }
+            ]
+            attention_list.append(dic)
             que_json_idx += 1
 
     with open(args.save_json, 'w') as f:
-        json.dump(que_json, f)
+        json.dump(attention_list, f)
 
 
 if __name__ == '__main__':
@@ -61,11 +67,11 @@ if __name__ == '__main__':
                         default='../attention_weight',
                         help='入力用のデータ')
     parser.add_argument('--input_ids',
-                        default='../bert_input_ids/save_ids.json',
+                        default='../bert_input_ids/features.json',
                         help='テキストのファイル')
     parser.add_argument('-s',
                         '--save_json',
-                        default='../features/features.json',
+                        default='../visualize/src/assets/features_ver2.json',
                         help='保存先')
     args = parser.parse_args()
     main(args)

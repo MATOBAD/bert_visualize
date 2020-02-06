@@ -2,7 +2,7 @@
   <div>
     <span v-for='i of len' v-bind:key='i'>
         <span class="word" v-bind:style="{ backgroundColor: calcWeight(weight[i-1]) }" v-bind:title="titleMessage(weight[i-1])">
-            {{ sentence[i-1] }}
+          {{ sentence[i-1] }}
         </span>
     </span>
   </div>

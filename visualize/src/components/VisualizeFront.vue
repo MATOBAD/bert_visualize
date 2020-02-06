@@ -52,7 +52,7 @@ export default {
 
 .container {
   font-family: "Yu Gothic", YuGothic, Verdana, 'Hiragino Kaku Gothic ProN','Hiragino Kaku Gothic Pro', 'ヒラギノ角ゴ Pro W3', 'メイリオ', Meiryo, sans-serif;
-  text-align: center;
+  text-align: left;
   cursor: pointer;
 }
 .container:hover{
