@@ -25,7 +25,7 @@
 <script>
 import VisualizeFront from './components/VisualizeFront.vue'
 import VisualizeList from './components/VisualizeList.vue'
-import PerfectScrollbar from 'vue2-perfect-scrollbar'
+import { PerfectScrollbar } from 'vue2-perfect-scrollbar'
 
 export default {
   name: 'app',
@@ -66,16 +66,6 @@ ul {
 
 li {
    list-style: none;
-}
-
-h1 {
-  font-size : 16px;
-  margin: 0;
-}
-
-p {
-  margin: 0;
-  font-size: 15px;
 }
 
 #tabs {
